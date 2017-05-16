@@ -18,7 +18,7 @@ public class ArticleService {
 	}
 
 	public Article getArticle(Long id) {
-		return articleDao.findOne(id).orElse(null);
+		return articleDao.getOne(id);
 	}
 
 	public Article save(Article blog) {
@@ -26,7 +26,7 @@ public class ArticleService {
 	}
 
 	public void delete(Long id) {
-		articleDao.delete(id);
+		articleDao.deleteById(id);
 	}
 
 	public List<Article> getByTitle(String title) {
